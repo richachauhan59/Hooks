@@ -5,7 +5,10 @@ function ToDo(){
     const [query, setQuery] = useState("")
     const [data, setData] = useState(null)
 
-    
+
+    handleClick = ( ) => {
+        data:
+    }
 
  
     return (
@@ -15,7 +18,7 @@ function ToDo(){
             onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleClick} >Add</button>
-            <button onClick={handleClick} >Add</button>
+            <button  onClick={handleClick} >Delete</button>
 
             {data && data.map(item => <div key={item.id} > {item.login} </div> ) }
 

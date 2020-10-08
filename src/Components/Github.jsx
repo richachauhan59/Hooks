@@ -1,16 +1,24 @@
-import React , { useState } from 'react'
+import React , { useState, useEffect  } from 'react'
 import axios from 'axios'
 
 function Github(){
     const [query, setQuery] = useState("")
-    const [data, setData] = useState(null)
+    const [data, setData] = useState("")
+
+
+    useEffect(() => {
+        handleClick();
+      }, []);
+    
+      useEffect(() => {
+      }, [data, query]);
 
 
     const handleClick = () => {
         axios
           .get("https://api.github.com/search/users", {
             params: {
-              q: query
+              q: query || "masai" 
             }
           })
           .then((res) => setData(res.data.items))
@@ -33,3 +41,5 @@ function Github(){
     )
 }
 export default Github
+
+
